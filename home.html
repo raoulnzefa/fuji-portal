@@ -311,7 +311,7 @@
             const token = Cookies.get("LY_TOKEN");
             if (token) {
                 // 有token，曾经登录过，查询用户信息
-                leyou.http.get("/user/" + token)
+                fuji.http.get("/user/" + token)
                     .then(resp => {
                         this.user = resp.data;
                         // 查询订单信息
@@ -331,9 +331,9 @@
                 // 删除cookie中的token即可
                 Cookies.remove("LY_TOKEN",{
                     path:"/",
-                    domain:"leyou.com"
+                    domain:"fuji.com"
                 });
-                window.location = 'http://www.leyou.com'
+                window.location = 'http://www.fuji.com'
             },
             gotoLogin() {
                 window.location = "login.html?returnUrl=" + window.location;

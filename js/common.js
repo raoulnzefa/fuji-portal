@@ -512,12 +512,12 @@ const stringify = function(object, options) {
     return values.join("&");
 }
 
-axios.defaults.baseURL = "http://api.leyou.com/api";
+axios.defaults.baseURL = "http://api.fuji.com/api";
 axios.defaults.timeout = 5000;
 axios.defaults.withCredentials = true
 
 // 配置对象
-const ly = leyou = {
+const ly = fuji = {
     /**
      * 对encodeURI()编码过的 URI 进行解码。并且获取其中的指定参数
      * @param name

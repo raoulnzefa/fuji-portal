@@ -109,11 +109,11 @@
         },
         methods:{
             login(){
-                leyou.http.post("/user/login",leyou.stringify(this.form))
+                fuji.http.post("/user/login",fuji.stringify(this.form))
                     .then(resp => {
                         if(resp.status === 200){
-                            const url = leyou.getUrlParam("returnUrl");
-                            window.location = url || 'http://www.leyou.com';
+                            const url = fuji.getUrlParam("returnUrl");
+                            window.location = url || 'http://www.fuji.com';
                         }
                     })
                     .catch(() => this.msg = '用户名或密码错误')
