@@ -517,7 +517,7 @@ axios.defaults.timeout = 5000;
 axios.defaults.withCredentials = true
 
 // 配置对象
-const ly = fuji = {
+const fj = fuji = {
     /**
      * 对encodeURI()编码过的 URI 进行解码。并且获取其中的指定参数
      * @param name

@@ -45,7 +45,7 @@ const shortcut = {
         }
     },
     created() {
-        ly.http("/auth/verify")
+        fj.http("/auth/verify")
             .then(resp => {
                 this.user = resp.data;
             })

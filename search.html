@@ -88,7 +88,7 @@
 
 <div id="searchApp">
 <div id="nav-bottom">
-    <ly-top/>
+    <fj-top/>
 </div>
 
 
@@ -760,10 +760,29 @@
     var vm = new Vue({
         el: "#searchApp",
         data: {
+            search: {
+              key: ""   //搜索条件
+            },
+            goodsList: []   //数据模型集合
         },
+        created() {
+            if (!location.search) {
+                return;
+            }
+            const search = location.search.substring(1); // "key=手机"
+            this.search = fj.parse(search);
 
+            this.loadData();
+        },
+        methods: {
+          loadData(){
+              fj.http.post("/search/page", this.search).then(res => {
+                  console.log(res);
+              })
+          }
+        },
         components:{
-            lyTop: () => import("./js/pages/top.js")
+            fjTop: () => import("./js/pages/top.js")
         }
     });
 </script>

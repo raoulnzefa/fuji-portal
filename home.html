@@ -308,7 +308,7 @@
             }
         },
         created() {
-            const token = Cookies.get("LY_TOKEN");
+            const token = Cookies.get("FJ_TOKEN");
             if (token) {
                 // 有token，曾经登录过，查询用户信息
                 fuji.http.get("/user/" + token)
@@ -329,7 +329,7 @@
         methods: {
             logout() {
                 // 删除cookie中的token即可
-                Cookies.remove("LY_TOKEN",{
+                Cookies.remove("FJ_TOKEN",{
                     path:"/",
                     domain:"fuji.com"
                 });
@@ -340,13 +340,13 @@
             },
             loadOrder(){
                 // 查询订单信息
-                ly.http.get("/order/list?"+ ly.stringify(this.query))
+                fj.http.get("/order/list?"+ fj.stringify(this.query))
                     .then(({data:{items,total}}) => {
                         this.orders = items;
                     }).catch(() => this.orders = [])
             },
-            formatDate:ly.formatDate,
-            formatPrice: ly.formatPrice,
+            formatDate:fj.formatDate,
+            formatPrice: fj.formatPrice,
             getTotalPrice(order){
                 return order.orderDetails.map(d => d.num * d.price).reduce((v1,v2) => v1 + v2, 0);
             }

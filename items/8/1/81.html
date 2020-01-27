@@ -26,7 +26,7 @@
 	<!--页面顶部，由js动态加载-->
 	<div id="itemApp">
 	<div id="nav-bottom">
-		<ly-top />
+		<fj-top />
 	</div>
 
 	<div  class="py-container">
@@ -608,7 +608,7 @@ $(function(){
 			},
             addCart(){
                 // 跳转到购物车页面之前，首先进行数据保存，购物车页面才可以获取到参数数据
-                ly.store.set("cartParam",{
+                fj.store.set("cartParam",{
                     skuId:this.sku.id,
                     num: this.num
                 })
@@ -617,7 +617,7 @@ $(function(){
             }
 		},
 		components:{
-            lyTop: () => import('http://www.fuji.com/js/pages/top.js')
+            fjTop: () => import('http://www.fuji.com/js/pages/top.js')
 		}
     });
 </script>

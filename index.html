@@ -15,10 +15,10 @@
 </head>
 
 <body>
-	
+
 	<!-- 头部栏位 -->
 	<div id="nav-bottom">
-		<ly-top/>
+		<fj-top/>
 	</div>
 	<!--页面顶部，由js动态加载-->
 	<script src="./js/vue/vue.js"></script>
@@ -28,7 +28,7 @@
         var indexVm = new Vue({
             el:"#nav-bottom",
             components:{
-                lyTop:() => import('./js/pages/top.js')
+                fjTop:() => import('./js/pages/top.js')
 			}
         });
 	</script>
@@ -449,7 +449,7 @@
 						 <a href="/">
 						<img src="img/banner3x.jpg"  />
 						</a>
-					     
+
 					    </div>
 					  </div><a href="#myCarousel" data-slide="prev" class="carousel-control left">‹</a><a href="#myCarousel" data-slide="next" class="carousel-control right">›</a>
 					</div>
@@ -997,7 +997,7 @@
 			</ul>
 		</div>
 	</div>
-	
+
 	<!-- 底部栏位 -->
 	<!--页面底部，由js动态加载-->
 	<script type="text/javascript" src="plugins/jquery/jquery.min.js"></script>
@@ -1030,11 +1030,11 @@
 			</li>
 		</ul>
 	</div>
-	
+
 	<!--侧栏面板开始,由js动态加载-->
 	<div class="J-global-toolbar"></div>
     <script type="text/javascript">$(".J-global-toolbar").load("side.html");</script>
-	
+
 <!--购物车单元格 模板-->
 <script type="text/template" id="tbar-cart-item-template">
 	<div class="tbar-cart-item" >

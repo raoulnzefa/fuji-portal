@@ -1,4 +1,4 @@
-const lyTop = {
+const fjTop = {
     template: "\
     <div class='nav-top'> \
      <shortcut/>\
@@ -70,7 +70,7 @@ const lyTop = {
         </div>\
        </div> \
       ",
-    name:'ly-top',
+    name:'fj-top',
     data() {
         return {
             key: "",
@@ -97,4 +97,4 @@ const lyTop = {
         shortcut:() => import('./shortcut.js')
     }
 }
-export default lyTop;
+export default fjTop;
