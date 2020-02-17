@@ -109,7 +109,7 @@
         },
         methods:{
             login(){
-                fuji.http.post("/user/login",fuji.stringify(this.form))
+                fuji.http.post("/auth/login",fuji.stringify(this.form))
                     .then(resp => {
                         if(resp.status === 200){
                             const url = fuji.getUrlParam("returnUrl");
