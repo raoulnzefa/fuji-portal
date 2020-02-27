@@ -535,6 +535,9 @@ const fj = fuji = {
      * 发起ajax请求工具，底层依然是axios
      */
     http: axios,
+    verify() {
+        return fj.http.get("/api/auth/verify");
+    },
     store: {
         set(key, value) {
             localStorage.setItem(key, JSON.stringify(value));
