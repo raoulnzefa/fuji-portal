@@ -536,7 +536,7 @@ const fj = fuji = {
      */
     http: axios,
     verify() {
-        return fj.http.get("/api/auth/verify");
+        return fj.http.get("/auth/verify");
     },
     store: {
         set(key, value) {

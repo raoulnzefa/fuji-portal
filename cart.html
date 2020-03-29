@@ -94,7 +94,7 @@
                         <span><em>已节省：</em><i>-¥20.00</i></span>
                     </div>
                     <div class="sumbtn">
-                        <a class="sum-btn"  href="getOrderInfo.html"  target="_blank">结算</a>
+                        <a class="sum-btn"  href="javascript:void(0);" @click="toOrder()"  target="_blank">结算</a>
                     </div>
                 </div>
             </div>
@@ -273,7 +273,10 @@
         },
         created() {
             fj.verify().then(res => {
-
+                fj.http.get("/cart").then(res => {
+                    this.carts = res.data;
+                    this.selected = this.carts;
+                })
             }).catch(() => {
                 this.carts = fj.store.get("FJ_CART");
                 this.selected = this.carts;
@@ -288,6 +291,14 @@
             }
         },
         methods: {
+            toOrder() {
+                fj.verify().then(res => {
+                    fj.store.set("FJ_SELECTED", this.selected);
+                    window.location = "http://www.fuji.com/getOrderInfo.html";
+                }).catch(() => {
+                    window.location = "http://www.fuji.com/login.html?returnUrl=http://www.fuji.com/cart.html";
+                });
+            },
             incr(cart) {
                 cart.num++;
                 fj.verify().then(res => {

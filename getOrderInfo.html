@@ -116,8 +116,8 @@
 					</div>
 					<div class="step-cont">
 						<ul class="payType">
-							<li class="" >微信付款<span title="点击取消选择"></span></li>
-							<li class="selected">货到付款<span title="点击取消选择"></span></li>
+							<li :class="{selected: order.paymentType == 1}" :click="{order.paymentType==1}">微信付款<span title="点击取消选择"></span></li>
+							<li :class="{selected: order.paymentType == 2}" :click="{order.paymentType==1}">货到付款<span title="点击取消选择"></span></li>
 						</ul>
 					</div>
 					<div class="hr"></div>
@@ -228,7 +228,9 @@
                     }
 				],
 				selectedAddress: 0,
-
+				order: {
+                	paymentType: 2
+				}
             },
 			components:{
                 shortcut: () => import("/js/pages/shortcut.js")
